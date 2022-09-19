@@ -21,7 +21,7 @@ class TestModeTest {
 
     @Test
     @DisplayName("Should successfully login with active registered user")
-    void shouldSuccessfulLoginIfRegisteredActiveUser() {
+    void IfRegisteredAndActiveUser() {
         var registeredUser = getRegisteredUser("active");
         $("[data-test-id='login'] input").setValue(registeredUser.getLogin());
         $("[data-test-id='password'] input").setValue(registeredUser.getPassword());
@@ -32,7 +32,7 @@ class TestModeTest {
 
     @Test
     @DisplayName("Should get error message if login with not registered user")
-    void shouldGetErrorIfNotRegisteredUser() {
+    void IfNotRegisteredUser() {
         var notRegisteredUser = getUser("active");
         $("[data-test-id='login'] input").setValue(notRegisteredUser.getLogin());
         $("[data-test-id='password'] input").setValue(notRegisteredUser.getPassword());
@@ -43,7 +43,7 @@ class TestModeTest {
 
     @Test
     @DisplayName("Should get error message if login with blocked registered user")
-    void shouldGetErrorIfBlockedUser() {
+    void IfBlockedUser() {
         var blockedUser = getRegisteredUser("blocked");
         $("[data-test-id='login'] input").setValue(blockedUser.getLogin());
         $("[data-test-id='password'] input").setValue(blockedUser.getPassword());
@@ -53,8 +53,8 @@ class TestModeTest {
     }
 
     @Test
-    @DisplayName("Should get error message if login with wrong login")
-    void shouldGetErrorIfWrongLogin() {
+    @DisplayName("If login is wrong - show a message")
+    void IfWrongLogin() {
         var registeredUser = getRegisteredUser("active");
         var wrongLogin = getRandomLogin();
         $("[data-test-id='login'] input").setValue((wrongLogin));
@@ -66,7 +66,7 @@ class TestModeTest {
 
     @Test
     @DisplayName("Should get error message if login with wrong password")
-    void shouldGetErrorIfWrongPassword() {
+    void IfWrongPassword() {
         var registeredUser = getRegisteredUser("active");
         var wrongPassword = getRandomPassword();
         $("[data-test-id='login'] input").setValue((registeredUser.getLogin()));
