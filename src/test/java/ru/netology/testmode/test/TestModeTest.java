@@ -4,9 +4,6 @@ import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -17,17 +14,18 @@ import static ru.netology.testmode.data.DataGenerator.getRandomPassword;
 
 class TestModeTest {
 
-    private WebDriver driver;
+   // private WebDriver driver;
 
     @BeforeEach
     void setup() {
 
         open("http://localhost:9999");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+
+       // ChromeOptions options = new ChromeOptions();
+       // options.addArguments("--disable-dev-shm-usage");
+       // options.addArguments("--no-sandbox");
+        // options.addArguments("--headless");
+        //driver = new ChromeDriver(options);
     }
 
     @Test
